@@ -1,0 +1,27 @@
+package com.example.android.studyvocab;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
+
+import java.util.Random;
+
+public class MyReceiver extends BroadcastReceiver {
+
+      String[] words = new String[]{//use array file};
+      
+      @Override
+    public void onReceive(Context context, Intent intent) {
+
+        int i;
+        int idx = new Random().nextInt(words.length);
+        String random = (words[idx]);
+        for(i=0;i<5;i++) {
+            Toast.makeText(context, random, Toast.LENGTH_LONG).show();
+        }
+    }
+}
